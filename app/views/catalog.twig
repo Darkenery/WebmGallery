@@ -1,0 +1,7 @@
+{% extends 'index.twig' %}
+
+{% block catalog %}
+    {% for webm in webms %}
+        <a href="{{ request.basepath }}/webm/{{ webm.getCatalog() }}/{{ webm.getName() }}"><button><img src="{{ webm.getPreviewPath() }}"></button></a>
+    {% endfor %}
+{% endblock %}
