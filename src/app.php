@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\File\Exception\AccessDeniedException;
 
 
 $app->register(new \Silex\Provider\DoctrineServiceProvider());
+$app->register(new \Silex\Provider\UrlGeneratorServiceProvider());
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => '../app/views',
 ));

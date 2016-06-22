@@ -18,6 +18,6 @@ class IndexController
         $catalogs = scandir('webm/');
         $catalogs = array_diff($catalogs, array('.', '..',));
 
-        return $app['twig']->render('index.twig', array ('request' => $request, 'catalogs' => $catalogs));
+        return $app['twig']->render('index.twig', array ('catalogs' => $catalogs));
     }
 }

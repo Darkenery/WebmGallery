@@ -7,13 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Webm</title>
 
-    <link rel="stylesheet" href="{{ request.basepath }}/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{ request.basepath }}/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="{{ request.basepath }}/css/style.css">
+    <link rel="stylesheet" href="{{ app.request.basepath }}/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ app.request.basepath }}/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{{ app.request.basepath }}/css/style.css">
 
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script src="{{ app.request.basepath }}/js/bootstrap.min.js"></script>
 
-    <script src="{{ request.basepath }}/js/jquery.min.js"></script>
-    <script src="{{ request.basepath }}/js/bootstrap.min.js"></script>
 </head>
 <body>
 <nav class="nav navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -30,7 +30,7 @@
         <div class="collapse navbar-collapse" id="navbar-1">
             <ul class="nav navbar-nav">
                 {% for catalog in catalogs %}
-                    <li><a href='/{{ catalog }}'>{{ catalog }}</a></li>
+                    <li><a href={{ path('catalog', {'catalog':catalog}) }}>{{ catalog }}</a></li>
                 {% endfor %}
             </ul>
         </div>
@@ -43,5 +43,20 @@
     {% endblock %}
     </div>
 </div>
+
+{% block webm %}
+
+{% endblock %}
+<script>
+    $('body').on('hidden.bs.modal', '.modal', function () {
+        $('video').trigger('pause');
+    });
+
+    $(document).ready(function(){
+        $('#webmModal').modal();
+    });
+
+    document.getElementsByTagName('video')[0].volume = 0.1;
+</script>
 
 </body>

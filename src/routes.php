@@ -7,9 +7,10 @@
  */
 
 
-$app->get("/", 'webm\Controller\IndexController::showRecent');
-$app->get("/{catalog}", 'webm\Controller\CatalogController::showCatalog');
-$app->get("/{catalog}/{webm}", 'webm\Controller\WebmController::showWebm');
+$app->get("/", 'webm\Controller\IndexController::showRecent')->bind('index');
+$app->get("/{catalog}/", 'webm\Controller\CatalogController::showCatalog')->bind('catalog');
+$app->get("/{catalog}/{wwebm}", 'webm\Controller\WebmController::showWebm')->bind('webm');
+
 
 //$app->get('/{catalog}', \webm\Controller\IndexController::indexAction());
 

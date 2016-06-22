@@ -40,9 +40,11 @@ class Webm
 
     public function makePreview()
     {
-        if (!file_exists('/preview/'.$this->name.'.jpg'))
-            //ffmpeg create preview
-        ;
         $this->previewPath = 'webm/'.$this->catalog.'/previews/'.$this->name.'.jpg';
+        if (!file_exists("webm/$this->catalog/previews"))
+            mkdir("webm/$this->catalog/previews");
+
+        if (!file_exists($this->previewPath))
+            shell_exec("ffmpeg -ss 00:00:00 -i webm/$this->catalog/$this->name -vf scale=320:180 -frames:v 1 $this->previewPath");
     }
 }

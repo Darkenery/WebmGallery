@@ -1,0 +1,16 @@
+{% extends 'catalog.twig' %}
+
+
+{% block webm %}
+    <div id="webmModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <video id='webm' width='720' controls='controls' autoplay='autoplay' loop='loop'>
+                        <source src={{ app.request.basepath }}/webm/{{ catalog }}/{{ wwebm }}>
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
