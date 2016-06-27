@@ -7,9 +7,9 @@
  */
 
 $app['db.options'] = array(
-    'driver' => 'pdo_mysql',
-    'host' => '',
-    'dbname' => '',
-    'user' => '',
-    'password' => ''
+    'driver' => 'pdo_pgsql',
+    'host' => 'localhost',
+    'dbname' => 'webm',
+    'user' => 'darkenery',
+    'password' => 'Jazqay14'
 );

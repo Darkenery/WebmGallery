@@ -7,10 +7,13 @@
  */
 
 require_once '../vendor/autoload.php';
-define ('ROOR', __DIR__);
+
 $app = new Silex\Application();
+
 $app['debug'] = true;
+
 require '../src/app.php';
+require '../src/db.php';
 require '../src/routes.php';
 
 $app -> run();

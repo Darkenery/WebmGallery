@@ -20,12 +20,13 @@ class CatalogController
         $list = scandir('webm/' . $catalog);
         $list = array_diff($list, array('.', '..', 'previews'));
 
-        foreach ($list as $webm)
+        foreach ($list as $webm) {
             $webms[] = new Webm($webm, $catalog);
+            $app['repository.webm']->writeToDB($catalog, $webm);
+        }
 
         $catalogs = scandir('webm/');
         $catalogs = array_diff($catalogs, array('.', '..',));
-
 
         return $app['twig']->render('catalog.twig', array('webms' => $webms, 'catalogs' => $catalogs));
     }
