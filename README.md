@@ -7,7 +7,7 @@ __W I P__
 
 TO DO LIST:
 * ~~Construct simple view of saved videos~~
-* Modal window for playing video
+* ~~Modal window for playing video~~
 * Upload
 * Authorisation for users
 * Some front-end beauties
