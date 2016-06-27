@@ -1,3 +1,5 @@
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Darkenery/WebmGallery/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Darkenery/WebmGallery/?branch=master)
+
 # WebmGallery
 Video gallery for sharing saved .webm or different video format
 
