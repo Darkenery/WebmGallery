@@ -12,12 +12,14 @@ namespace webm\Entity;
 class Webm
 {
     protected $name;
+    protected $linkName;
     protected $catalog;
     protected $previewPath;
 
     public function __construct($name, $catalog)
     {
         $this->name = $name;
+        $this->linkName = chop($name, '.webm');
         $this->catalog = $catalog;
         $this->makePreview();
     }
@@ -27,6 +29,10 @@ class Webm
         return $this->name;
     }
 
+    public function getLinkName()
+    {
+        return $this->linkName;
+    }
 
     public function getCatalog()
     {

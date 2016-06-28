@@ -19,8 +19,8 @@ class NewWebmController
 
         $lastWebms = $app['repository.webm']->getLast(20);
 
-        $catalog = $app['repository.webm']->findCatalog($webm);
+        $catalog = $app['repository.webm']->findCatalog($webm.'.webm');
 
-        return $app['twig']->render('newwebm.twig', array( 'catalogs' => $catalogs, 'lastWebms' => $lastWebms, 'catalog' => $catalog, 'wwebm' => $webm, ));
+        return $app['twig']->render('newwebm.twig', array( 'catalogs' => $catalogs, 'lastWebms' => $lastWebms, 'catalog' => $catalog, 'webm' => $webm, ));
     }
 }
