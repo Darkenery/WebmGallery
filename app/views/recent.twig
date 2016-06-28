@@ -1,0 +1,11 @@
+{% extends 'index.twig' %}
+
+{% block catalog %}
+    {% for webm in lastWebms %}
+        <a href={{ path('newWebm', {'webm' : webm.getName()}) }}><button class="btn btn-prev"><img src="{{ app.request.basepath}}/{{ webm.getPreviewPath() }}"></button></a>
+    {% endfor %}
+{% endblock %}
+
+{% block webm %}
+
+{% endblock %}

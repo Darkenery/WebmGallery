@@ -9,15 +9,17 @@
 namespace webm\Controller;
 
 use Silex\Application;
-use Symfony\Component\HttpFoundation\Request;
+
 
 class IndexController
 {
-    public function showRecent(Request $request, Application $app)
+    public function showNew(Application $app)
     {
         $catalogs = scandir('webm/');
         $catalogs = array_diff($catalogs, array('.', '..',));
 
-        return $app['twig']->render('index.twig', array ('catalogs' => $catalogs));
+        $lastWebms = $app['repository.webm']->getLast(100);
+
+        return $app['twig']->render('recent.twig', array ('catalogs' => $catalogs, 'lastWebms' => $lastWebms));
     }
 }

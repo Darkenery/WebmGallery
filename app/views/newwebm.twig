@@ -1,4 +1,4 @@
-{% extends 'catalog.twig' %}
+{% extends 'recent.twig' %}
 
 {% block webm %}
     <div id="webmModal" class="modal fade" role="dialog">
@@ -6,7 +6,7 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <video id='webm' width='720' controls='controls' autoplay='autoplay' loop='loop'>
-                        <source src={{ app.request.basepath }}/webm/{{ catalog }}/{{ wwebm }}>
+                        <source src={{ app.request.basepath }}/webm/{{ catalog }}/{{ webm }}>
                     </video>
                 </div>
             </div>

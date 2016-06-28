@@ -5,3 +5,12 @@ body {
 .modal-dialog{
     display:table;
 }
+
+.btn-prev{
+    width: 330px;
+    height: 190px;
+    padding: 4px;
+    margin: 4px;
+
+    background-color: #3c3c3c;
+}

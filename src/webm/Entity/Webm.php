@@ -41,7 +41,7 @@ class Webm
     public function makePreview()
     {
         $this->previewPath = 'webm/'.$this->catalog.'/previews/'.$this->name.'.jpg';
-        if (!file_exists("webm/$this->catalog/previews"))
+        if (!file_exists("webm/$this->catalog/previews") AND $this->catalog)
             mkdir("webm/$this->catalog/previews");
 
         if (!file_exists($this->previewPath))

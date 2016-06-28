@@ -2,7 +2,7 @@
 
 {% block catalog %}
     {% for webm in webms %}
-        <a href={{ path('webm', {'catalog': webm.getCatalog(), 'wwebm' : webm.getName()}) }}><button><img src="{{ app.request.basepath}}/{{ webm.getPreviewPath() }}"></button></a>
+        <a href={{ path('webm', {'catalog': webm.getCatalog(), 'wwebm' : webm.getName()}) }}><button class="btn btn-prev"><img src="{{ app.request.basepath}}/{{ webm.getPreviewPath() }}"></button></a>
     {% endfor %}
 {% endblock %}
 

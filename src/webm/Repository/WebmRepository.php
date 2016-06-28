@@ -25,4 +25,23 @@ class WebmRepository
         if (!$stmt->rowCount())
             $this->db->insert('webm', array ('catalog' => $catalog, 'name' => $name));
     }
+
+    public function getLast($number)
+    {
+        $stmt = $this->db->executeQuery('SELECT * FROM webm ORDER BY id DESC LIMIT ?;', array ($number));
+        $webms = $stmt->fetchAll();
+
+        foreach ($webms as $webm){
+            $lastWebms[] = new Webm($webm['name'], $webm['catalog']);
+        }
+
+        return $lastWebms;
+    }
+
+    public function findCatalog($name)
+    {
+        $stmt = $this->db->executeQuery('SELECT catalog FROM webm WHERE name = ?;', array ($name));
+        $webm = $stmt->fetchColumn();
+        return $webm;
+    }
 }
