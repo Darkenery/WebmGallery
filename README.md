@@ -11,6 +11,7 @@ TO DO LIST:
 * ~~Construct simple view of saved videos~~
 * ~~Modal window for playing video~~
 * ~~Save new video's data in DB~~
+* ~~Show new videos at index~~
 * Upload
 * Authorisation for users
 * Some front-end beauties
