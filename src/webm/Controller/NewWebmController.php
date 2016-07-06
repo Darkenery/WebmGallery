@@ -17,7 +17,7 @@ class NewWebmController
         $catalogs = scandir('webm/');
         $catalogs = array_diff($catalogs, array('.', '..',));
 
-        $lastWebms = $app['repository.webm']->getLast(20);
+        $lastWebms = $app['repository.webm']->getLast(100);
 
         $catalog = $app['repository.webm']->findCatalog($webm.'.webm');
 
